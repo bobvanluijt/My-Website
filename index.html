@@ -50,9 +50,9 @@ body {
 	position: absolute;
 	left: 49%;
 	line-height: 28px;
-	height: 530px;
+	height: 180px;
 	top: 50%;
-	margin-top: -224px;
+	margin-top: -100px;
 	display:none;
 	z-index:9999;
 	text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
@@ -66,6 +66,10 @@ body {
 }
 #titleH1 {
 	display:none;	
+}
+
+.tag {
+	font-size:10px;
 }
 
 .page {
@@ -174,7 +178,7 @@ body {
 .bigBlock {
 	position: absolute;
 	width: 600px;
-	background-color: green;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFNEUzMDlGRDIwMDQxMUU0OTlFOEQ4OEQ3REIxQTdBMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFNEUzMDlGRTIwMDQxMUU0OTlFOEQ4OEQ3REIxQTdBMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU0RTMwOUZCMjAwNDExRTQ5OUU4RDg4RDdEQjFBN0EwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0RTMwOUZDMjAwNDExRTQ5OUU4RDg4RDdEQjFBN0EwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+IwW5SgAAABVJREFUeNpi+v///00QZmKAAoAAAwBoTAexViABSgAAAABJRU5ErkJggg==);
 	height: 400px;
 	left: 50%;
 	margin-left: -300px;
@@ -184,19 +188,22 @@ body {
 	z-index: 2;
 }
 .bigBlockTitle {
-	padding: 14px;
+	padding: 10px;
 	font-size: 28px;
+	padding-bottom: 6px;
 }
 .bigBlockContainer {
-	padding: 14px;
-	padding-top: 0px;
+	padding: 10px;
 	font-size: 14px;
 }
 .bigBlockTags {
-	bottom: 0px;
 	position: absolute;
-	padding: 14px;
-	padding-bottom: 4px;	
+	bottom: 0px;
+	padding: 10px;
+	padding-bottom: 3px;
+	left: 0px;
+	right: 0px;
+	padding-top: 4px;
 }
 .cornerBlock {
 	position:absolute;
@@ -205,20 +212,20 @@ body {
 	background-color:#009de0;
 }
 .cornerBlockLeftTop {
-	left:0px;
-	top:0px;
+	left:-4px;
+	top:-4px;
 }
 .cornerBlockLeftBottom {
-	left:0px;
-	bottom:0px;
+	left:-4px;
+	bottom:-4px;
 }
 .cornerBlockRightTop {
-	right:0px;
-	top:0px;
+	right:-4px;
+	top:-4px;
 }
 .cornerBlockRightBottom {
-	right:0px;
-	bottom:0px;
+	right:-4px;
+	bottom:-4px;
 }
 
 </style>
@@ -229,21 +236,21 @@ body {
 
 <div id="page2" class="page">
     <div id="title">
-        Hi there!<br>My name is Bob van Luijt. I run an innovation studio, art lab and music production company that's called Kubrickology
+        Hi there!<br>My name is Bob van Luijt. I run an innovation studio, art lab and music production company called Kubrickology
     </div>
     <div class="container"><!--LOAD ANIMATION--></div>
     <div class="mountain"><!--show me the mountain--></div>
     <div id="footer">
     	<div class="footerLink" style="background-color:#0076b3" rel="about">about</div>
         <div class="footerLink" style="background-color:#6dc8bf" rel="music">music</div>
-        <div class="footerLink" style="background-color:#00a650" rel="technolgy">technology</div>
+        <div class="footerLink" style="background-color:#00a650" rel="technology">technology</div>
         <div class="footerLink" style="background-color:#fef200" rel="art">art</div>
         <div class="footerLink" style="background-color:#f68b1f" rel="books">books</div>
         <div class="footerLink footerLinkMakeSmall">
             <div class="footerLinkSmall" style="background-color:#f15a23; background-image:url(icons/twitter.png);" rel="social:twitter"></div>
-            <div class="footerLinkSmall" style="background-color:#b72468; background-image:url(icons/facebook.png);" rel="social:facebook"></div>
             <div class="footerLinkSmall" style="background-color:#672d91; background-image:url(icons/youtube.png);" rel="social:youtube"></div>
-            <div class="footerLinkSmall" style="background-color:#534fa3; background-image:url(icons/linkedin.png);" rel="social:linkedin"></div>
+            <div class="footerLinkSmall" style="background-color:#534fa3; background-image:url(icons/github.png);" rel="social:github"></div>
+            <div class="footerLinkSmall" style="background-color:#b72468; background-image:url(icons/facebook.png);" rel="social:facebook"></div>
         </div>
     </div>
 </div>
@@ -467,7 +474,28 @@ function cloudCreator(i){
 
 function doOnRelClick(){
 	$('[rel]').click(function(){
-		clickRels($(this).attr('rel'));
+		if( !$('.bigBlock').length ){
+			clickRels($(this).attr('rel'));
+		} else {
+			 var changeMe = $(this).attr('rel');
+			 var angle = 90;
+			 $('.bigBlock').animate({
+			 	marginLeft:"800px"
+			 }, { duration: 1750, queue: false }, function(){
+				$('.bigBlock').remove();
+				clickRels(changeMe);
+			});
+			 
+			 $({deg: 0}).animate({deg: angle}, {
+				duration: 1750,
+				step: function(now) {
+					$('.bigBlock').css({
+						transform: 'rotate(' + now + 'deg)'
+					});
+				}
+			});
+		}
+		//}
 	});
 }
 
@@ -492,9 +520,9 @@ function clickRels(i){
 			  'https://www.youtube.com/bobvanluijt',
 			  '_blank'
 			);
-		}  else if(i=='social:linkedin'){
+		}  else if(i=='social:github'){
 			window.open(
-			  'https://www.linkedin.com/profile/view?id=287684123',
+			  'https://www.github.com/kubrickology',
 			  '_blank'
 			);
 		}
@@ -504,7 +532,11 @@ function clickRels(i){
 		//
 		$.get("getData.php?i="+i, function(data) {
 			$( "#page1" ).html(data);
+			$('.bigBlockTitle').css('background-color', $('#footer').find('div[rel='+i+']').css('background-color'));
+			$('.bigBlockTags').css('background-color', $('#footer').find('div[rel='+i+']').css('background-color'));
 		});
+		
+		
 		
 		if(isOpen===false){
 			$('#footer').animate({
