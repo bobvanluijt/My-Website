@@ -20,10 +20,7 @@ if($locationArray[0]=='about'){
 			<div class="bigBlockTags">
 				<div class="tag">Tags: '.$_GET['i'].'</div>
 			</div>
-			<div class="cornerBlock cornerBlockLeftTop"></div>
-			<div class="cornerBlock cornerBlockRightTop"></div>
-			<div class="cornerBlock cornerBlockLeftBottom"></div>
-			<div class="cornerBlock cornerBlockRightBottom"></div>
+
 	</div>';
 } else if($locationArray[0]=='books'){
 	echo '<div class="bigBlock">
@@ -32,9 +29,6 @@ if($locationArray[0]=='about'){
 			<div class="bigBlockTags">
 				<div class="tag">Tags: '.$_GET['i'].'</div>
 			</div>
-			<div class="cornerBlock cornerBlockLeftTop"></div>
-			<div class="cornerBlock cornerBlockRightTop"></div>
-			<div class="cornerBlock cornerBlockLeftBottom"></div>
-			<div class="cornerBlock cornerBlockRightBottom"></div>
+
 	</div>';
 }

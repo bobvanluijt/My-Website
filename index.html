@@ -202,8 +202,8 @@ body {
 .cloudMouth {
 	position:absolute;
 	background-color:#000;
-	width:20px;
-	height:22px;
+	width:18px;
+	height:20px;
 	bottom:12px;
 	left:52px;
 	z-index:999999999;
@@ -219,24 +219,65 @@ body {
 	z-index:4;
 }
 
+.infoImageCase {
+	position:relative;
+	background-color:#FF0;
+	-webkit-box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+	box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	float:left;
+	margin:8px;
+	margin-left:0px;
+	margin-top:0px;
+	margin-bottom:2px;
+	width:150px;
+	height:150px;
+	overflow:hidden;
+}
 
+.bigLetter {
+	float:left;
+	font-size:76px;
+	margin-right:10px;
+	margin-bottom:0px;	
+}
 .bigBlock {
 	position: absolute;
-	width: 600px;
+	width: 100%;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFNEUzMDlGRDIwMDQxMUU0OTlFOEQ4OEQ3REIxQTdBMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFNEUzMDlGRTIwMDQxMUU0OTlFOEQ4OEQ3REIxQTdBMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU0RTMwOUZCMjAwNDExRTQ5OUU4RDg4RDdEQjFBN0EwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0RTMwOUZDMjAwNDExRTQ5OUU4RDg4RDdEQjFBN0EwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+IwW5SgAAABVJREFUeNpi+v///00QZmKAAoAAAwBoTAexViABSgAAAABJRU5ErkJggg==);
-	height: 500px;
-	left: 50%;
+	height: 400px;
+	left: 0px;
 	margin-left: -1200px;
 	top: 50%;
-	margin-top: -225px;
+	margin-top: -175px;
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 	transform: rotate(270deg);
 	z-index: 2;
+	display:none;
+}
+.content {
+	position:relative;
+	width:600px;
+	left:50%;
+	margin-left:-300px;
+}
+.contentText {
+	line-height: 1.2rem;
+	letter-spacing: 0.1rem;
 }
 .bigBlockTitle {
 	padding: 10px;
 	font-size: 28px;
 	padding-bottom: 6px;
+}
+.bigBlockTitleContent {
+	position:relative;
+	width:600px;
+	left:50%;
+	margin-left:-300px;
 }
 .bigBlockContainer {
 	padding: 10px;
@@ -244,7 +285,13 @@ body {
 	overflow:auto;
 	overflow-x:hidden;
 	overflow-y:scroll;
-	height:319px;
+	height:320px;
+}
+.bigBlockTagsContent {
+	position:relative;
+	width:600px;
+	left:50%;
+	margin-left:-300px;
 }
 .bigBlockTags {
 	position: absolute;
@@ -254,12 +301,6 @@ body {
 	left: 0px;
 	right: 0px;
 	padding-top: 4px;
-}
-.cornerBlock {
-	position:absolute;
-	width:10px;
-	height:10px;
-	background-color:#009de0;
 }
 .cornerBlockLeftTop {
 	left:-4px;
@@ -473,16 +514,11 @@ function animations(){
 			  speed:160,
 			  stagger:250,
 			  onComplete:function(){
-				funkyHead();
-				tickle();
-				$("#title").remove();
-				$("#page2").prepend('<div id="title2">Hi there!<br>My name is Bob van Luijt. I run an innovation studio, art lab and music production company called Kubrickology</div>');
+				buildBob();
 			  }
 		  }
 	   ]
 	});
-	funkyHead();
-	tickle();
 }
 
 function clouds(i){
@@ -617,11 +653,13 @@ function clickRels(i){
 		$.get("getData.php?i="+i, function(data) {
 			$( "#page1" ).html(data);
 
+			$('#bigBlock__1').toggle();
+
 			$('.bigBlockTitle').css('background-color', $('#footer').find('a[data-rel='+i+']').css('background-color'));
 			$('.bigBlockTags').css('background-color', $('#footer').find('a[data-rel='+i+']').css('background-color'));
 			
 			$('.bigBlock').animate({
-			 	marginLeft:"-300px"
+			 	marginLeft:"0px"
 			 }, { duration: 1250, queue: false });
 			
 			var angle = 360;
@@ -1867,6 +1905,37 @@ function buildBob(){
 		setBlock(52,  14,  '#c94f24', 'shoes');
 		$('.container').css("bottom", "588px");
 		$(document).bind('touchmove', false);
+		setTimeout(function(){
+			var speed  		= 20;
+			var runner		= 'a';
+			$('.littleBlock').each(function(index, element) {
+				var setMargin = Math.round(Math.random()*1000);
+				var chooseLocations = Math.floor((Math.random() * 4) + 1);
+				if(chooseLocations==1){
+					$(element).css('margin-top', setMargin+'px');
+					$(element).css('margin-right', setMargin+'px');
+				} else if(chooseLocations==2){
+					$(element).css('margin-top', Math.round(setMargin-(setMargin+setMargin))+'px');
+					$(element).css('margin-right', Math.round(setMargin-(setMargin+setMargin))+'px');
+				} else if(chooseLocations==2){
+					$(element).css('margin-top', setMargin+'px');
+					$(element).css('margin-right', Math.round(setMargin-(setMargin+setMargin))+'px');
+				} else if(chooseLocations==2){
+					$(element).css('margin-top', setMargin+'px');
+					$(element).css('margin-right', Math.round(setMargin-(setMargin+setMargin))+'px');
+				}
+
+				$(element).animate({
+					marginLeft: '',
+					marginRight: '',
+					marginBottom: '',
+					marginTop: '',
+					opacity: 1
+				}, speed*index);
+			});
+		}, 10);
+		funkyHead();
+		tickle();
 	}
 }
 
@@ -1905,44 +1974,14 @@ function loadScript(url, callback){
 							}
                         });
 						
-						setTimeout(function(){
-							var speed  		= 20;
-							var runner		= 'a';
-							$('.littleBlock').each(function(index, element) {
-								var setMargin = Math.round(Math.random()*1000);
-								var chooseLocations = Math.floor((Math.random() * 4) + 1);
-								if(chooseLocations==1){
-									$(element).css('margin-top', setMargin+'px');
-									$(element).css('margin-right', setMargin+'px');
-								} else if(chooseLocations==2){
-									$(element).css('margin-top', Math.round(setMargin-(setMargin+setMargin))+'px');
-									$(element).css('margin-right', Math.round(setMargin-(setMargin+setMargin))+'px');
-								} else if(chooseLocations==2){
-									$(element).css('margin-top', setMargin+'px');
-									$(element).css('margin-right', Math.round(setMargin-(setMargin+setMargin))+'px');
-								} else if(chooseLocations==2){
-									$(element).css('margin-top', setMargin+'px');
-									$(element).css('margin-right', Math.round(setMargin-(setMargin+setMargin))+'px');
-								}
-
-								$(element).animate({
-									marginLeft: '',
-									marginRight: '',
-									marginBottom: '',
-									marginTop: '',
-									opacity: 1
-								}, speed*index);
-							});
-						}, 320*$('.footerLink').length);
+						
 						
 						doOnRelClick();
 						if(window.location.hash) {
 							$('#title').remove();
 							clickRels(window.location.hash.substr(2));
 						} else {
-							$("html, body").animate({ scrollTop: $(document).height() }, "1", function(){
-								buildBob();	
-							});
+							$("html, body").animate({ scrollTop: $(document).height() }, "1");
 							animations();
 						}
 						$(window).on('hashchange',function(){ 
