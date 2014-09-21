@@ -97,7 +97,7 @@ body {
 }
 
 .tag {
-	font-size:10px;
+	font-size:9px;
 }
 
 .page {
@@ -105,6 +105,33 @@ body {
 	left:0px;
 	top:0px;
 	width:100%;
+}
+.bottomBlockContainer {
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	height:58px;
+	overflow:hidden;
+	z-index:2000;
+}
+.bottomBlock {
+	position:relative;
+	float:left;
+	width:180px;
+	height:40px;
+	top:70px; //revert to 8 in jQuery
+	margin-left:5px;
+	margin-right:5px;
+	padding:8px;
+	padding-top:2px;
+	font-size:11px;
+	cursor:pointer;
+	z-index:2000;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+.imFirst { /* padding for bottomBlocks */
+	margin-left:5px;
 }
 #page2 {
 	/*
@@ -137,7 +164,7 @@ body {
 .footerLink {
 	position:relative;
 	float:left;
-	width:16.666666666%;
+	width:14.2857142856%;
 	height:100%;
 	text-align:center;
 	font-size:12px;
@@ -162,7 +189,7 @@ body {
 	font-size:22px;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 42px 42px;
+	background-size: 88%;
 }
 
 .mountain {
@@ -221,7 +248,7 @@ body {
 
 .infoImageCase {
 	position:relative;
-	background-color:#FF0;
+	background-color:transparent;
 	-webkit-box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
 	-moz-box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
 	box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
@@ -236,6 +263,11 @@ body {
 	width:150px;
 	height:150px;
 	overflow:hidden;
+}
+.noShadow { /* remove box Shadow */
+	-webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0) !important;
+	-moz-box-shadow: inset 0 0 0px rgba(0,0,0,0) !important;
+	box-shadow: inset 0 0 0px rgba(0,0,0,0) !important;
 }
 
 .bigLetter {
@@ -255,6 +287,7 @@ body {
 	margin-top: -175px;
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 	transform: rotate(270deg);
+	opacity:0;
 	z-index: 2;
 	display:none;
 }
@@ -267,10 +300,11 @@ body {
 .contentText {
 	line-height: 1.2rem;
 	letter-spacing: 0.1rem;
+	display:none;
 }
 .bigBlockTitle {
 	padding: 10px;
-	font-size: 28px;
+	font-size: 12px;
 	padding-bottom: 6px;
 }
 .bigBlockTitleContent {
@@ -303,26 +337,48 @@ body {
 	padding-top: 4px;
 }
 .cornerBlockLeftTop {
-	left:-4px;
-	top:-4px;
+	position: absolute;
+	left: 6px;
+	top: -6px;
+	background-color: #FF0;
+	width: 184px;
+	height: 6px;
 }
-.cornerBlockLeftBottom {
-	left:-4px;
-	bottom:-4px;
-}
-.cornerBlockRightTop {
-	right:-4px;
-	top:-4px;
-}
-.cornerBlockRightBottom {
-	right:-4px;
-	bottom:-4px;
-}
-
 .imageBlock img {
 	margin-left:-10px;
 	margin-top:-10px;
 	width:600px;	
+}
+
+/*
+ * Responsive edits
+ */
+@media only screen and (max-width: 860px) {
+	.footerLink {
+		font-size:11px;
+	}
+}
+@media only screen and (max-width: 780px) {
+	.footerLink {
+		font-size:10px;
+	}
+}
+@media only screen and (max-width: 702px) {
+	.footerLink {
+		font-size:9px;
+	}
+}
+@media only screen and (max-width: 640px) {
+	.footerLink {
+		font-size:8px;
+	}
+}
+@media only screen and (max-width: 610px) {
+	.content {
+		width:100%;
+		left:0%;
+		margin-left:0px;
+	}
 }
 </style>
 </head>
@@ -341,7 +397,8 @@ body {
         <a class="footerLink" style="background-color:#6dc8bf" data-rel="music" href="#!music">music</a>
         <a class="footerLink" style="background-color:#00a650" data-rel="technology" href="#!technology">technology</a>
         <a class="footerLink" style="background-color:#fef200" data-rel="art" href="#!art">art</a>
-        <a class="footerLink" style="background-color:#f68b1f" data-rel="books" href="#!books">books</a>
+        <a class="footerLink" style="background-color:#534fa3" data-rel="talks" href="#!talks">talks</a>
+        <a class="footerLink" style="background-color:#f68b1f" data-rel="library" href="#!library">library</a>
         <div class="footerLink footerLinkMakeSmall">
             <a class="footerLinkSmall" style="background-color:#f15a23; background-image:url(icons/twitter.png);" target="_blank" href="https://twitter.com/bobvanluijt"></a>
             <a class="footerLinkSmall" style="background-color:#672d91; background-image:url(icons/youtube.png);" target="_blank" href="https://youtube.com/bobvanluijt"></a>
@@ -571,8 +628,11 @@ function cloudCreator(i){
 				duration: 1200,
 				step: function(now) {
 					$(cloud).css({
-						transform: 'rotate(' + now + 'deg)'
+						transform: 'rotate(' + now + 'deg)',
 					});
+					if($(cloud).css('opacity')>1){
+						$(cloud).css('opacity', '1');
+					}
 				}
 			});
 			setTimeout(function(){
@@ -588,6 +648,16 @@ function doOnRelClick(){
 	$('a').click(function(event){
 		if($(this).attr('target')!='_blank'){
 			event.preventDefault();
+			var durationBottomRemove = 200;
+			if( $('.bottomBlock').length ){
+				$('.bottomBlock').each(function(index, element) {
+                    $(element).animate({
+						top: '70px'
+					}, durationBottomRemove);
+					durationBottomRemove = durationBottomRemove+200;
+                });
+			}
+			
 			if( !$('.bigBlock').length ){
 				clickRels($(this).attr('data-rel'));
 			} else {
@@ -597,7 +667,7 @@ function doOnRelClick(){
 				 $('.bigBlock').addClass('.moved');
 				 
 				 $('.bigBlock').animate({
-					marginLeft:"800px"
+					marginLeft:"1200px"
 				 }, { duration: 1250, queue: false });
 				 
 				 $({deg: 0}).animate({deg: angle}, {
@@ -607,7 +677,7 @@ function doOnRelClick(){
 							transform: 'rotate(' + now + 'deg)'
 						});
 					}
-				});
+				 });
 				
 				setTimeout(function(){
 					$('.bigBlock').remove();
@@ -649,8 +719,7 @@ function clickRels(i){
 		//
 		// add data
 		//
-		
-		$.get("getData.php?i="+i, function(data) {
+		$.get(i+".php", function(data) {
 			$( "#page1" ).html(data);
 
 			$('#bigBlock__1').toggle();
@@ -660,15 +729,56 @@ function clickRels(i){
 			
 			$('.bigBlock').animate({
 			 	marginLeft:"0px"
-			 }, { duration: 1250, queue: false });
+			}, { duration: 1250, queue: false });
+			 
+			if(!$('.bottomBlockContainer').length){
+				$('#page1').append('<div class="bottomBlockContainer"><!--append--></div>');	
+			}
+			
+			var iBlock=0;
+			var loadId;
+			var timerBottomBlock = 400;
+			$('.bigBlock').each(function(index, element) {
+				loadId = $(element);
+				iBlock++;
+				$('.bottomBlockContainer').append('<div id="bottomBlock__'+iBlock+'" class="bottomBlock" data-bigblock="'+$(element).attr('id')+'"><div class="cornerBlockLeftTop"></div>'+$(element).find('.bigBlockTitleContent').text()+'</div>');
+				if(iBlock==1){
+					$('#bottomBlock__'+iBlock).addClass('imFirst');
+				}
+				$('#bottomBlock__'+iBlock).animate({
+					top: '8px'
+				}, timerBottomBlock);
+				timerBottomBlock = timerBottomBlock+200;
+				$('#bottomBlock__'+iBlock).click(function(){
+					$('.bigBlock').animate({
+						top: '20%',
+						opacity: '0'
+					}, "slow", function(){
+						$('.bigBlock').css('display', 'none');
+						$('.bigBlock').css('top', '100%');
+						loadId.css('display', 'block');
+						loadId.animate({
+							top: '50%',
+							opacity: '1'
+						}, "slow");
+					});
+				});
+            });
+			
+			$('.bottomBlock').css('background-color', $('#footer').find('a[data-rel='+i+']').css('background-color'));
+			$('.cornerBlockLeftTop').css('background-color', $('#footer').find('a[data-rel='+i+']').css('background-color'));
 			
 			var angle = 360;
 			$({deg: 270}).animate({deg: angle}, {
-				duration: 1250,
+				duration: 1750,
 				step: function(now) {
 					$('.bigBlock').css({
-						transform: 'rotate(' + now + 'deg)'
+						transform: 'rotate(' + now + 'deg)',
+						opacity: '1'
 					});
+				},
+				complete: function(){
+					loadId.find('.contentText').fadeIn();
 				}
 			});
 			
@@ -1969,7 +2079,7 @@ function loadScript(url, callback){
 						$('.footerLink').each(function(index, element) {
 							if(!$(element).hasClass('footerLinkMakeSmall')){
 								$(element).cooltext({
-									onMouseOver:{action:"animation", animation:["cool102","cool106","cool190"]}
+									onClick:{action:"animation", animation:["cool102","cool106","cool190"]}
 								});	
 							}
                         });
@@ -1980,6 +2090,7 @@ function loadScript(url, callback){
 						if(window.location.hash) {
 							$('#title').remove();
 							clickRels(window.location.hash.substr(2));
+							$('.footerLink').css('margin-top', '0px');
 						} else {
 							$("html, body").animate({ scrollTop: $(document).height() }, "1");
 							animations();
