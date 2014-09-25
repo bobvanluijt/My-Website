@@ -380,6 +380,28 @@ body {
 		margin-left:0px;
 	}
 }
+
+@media only screen and (max-width: 600px) {
+	
+	#footer {
+		height:100%;
+	}
+	.footerLink {
+		font-size:30px;
+		width:100%;
+		height:11.5%;	
+	}
+	#page1 {
+		display:none;
+	}
+	#page2 {
+		overflow:auto;	
+	}
+	body {
+		overflow:auto;
+	}
+	
+}
 </style>
 </head>
 
@@ -392,20 +414,20 @@ body {
     </div>
     <div class="container"><!--LOAD ANIMATION--></div>
     <div class="mountain"><!--show me the mountain--></div>
-    <div id="footer">
-    	<a class="footerLink" style="background-color:#0076b3" data-rel="about" href="#!about">about</a>
-        <a class="footerLink" style="background-color:#6dc8bf" data-rel="music" href="#!music">music</a>
-        <a class="footerLink" style="background-color:#00a650" data-rel="technology" href="#!technology">technology</a>
-        <a class="footerLink" style="background-color:#fef200" data-rel="art" href="#!art">art</a>
-        <a class="footerLink" style="background-color:#534fa3" data-rel="talks" href="#!talks">talks</a>
-        <a class="footerLink" style="background-color:#f68b1f" data-rel="library" href="#!library">library</a>
-        <div class="footerLink footerLinkMakeSmall">
-            <a class="footerLinkSmall" style="background-color:#f15a23; background-image:url(icons/twitter.png);" target="_blank" href="https://twitter.com/bobvanluijt"></a>
-            <a class="footerLinkSmall" style="background-color:#672d91; background-image:url(icons/youtube.png);" target="_blank" href="https://youtube.com/bobvanluijt"></a>
-            <a class="footerLinkSmall" style="background-color:#534fa3; background-image:url(icons/github.png);" target="_blank" href="https://github.com/kubrickology"></a>
-            <a class="footerLinkSmall" style="background-color:#b72468; background-image:url(icons/facebook.png);" target="_blank" href="https://facebook.com/bvanluijt"></a>
-            <a class="footerLinkSmall" style="background-color:rgb(109, 200, 191); background-image:url(icons/wtf.png);" target="_blank" href="https://ello.co/bvl"></a>
-        </div>
+</div>
+<div id="footer">
+    <a class="footerLink" style="background-color:#0076b3" data-rel="about" href="#!about">about</a>
+    <a class="footerLink" style="background-color:#6dc8bf" data-rel="music" href="#!music">music</a>
+    <a class="footerLink" style="background-color:#00a650" data-rel="technology" href="#!technology">technology</a>
+    <a class="footerLink" style="background-color:#fef200" data-rel="art" href="#!art">art</a>
+    <a class="footerLink" style="background-color:#534fa3" data-rel="talks" href="#!talks">talks</a>
+    <a class="footerLink" style="background-color:#f68b1f" data-rel="library" href="#!library">library</a>
+    <div class="footerLink footerLinkMakeSmall">
+        <a class="footerLinkSmall" style="background-color:#f15a23; background-image:url(icons/twitter.png);" target="_blank" href="https://twitter.com/bobvanluijt"></a>
+        <a class="footerLinkSmall" style="background-color:#672d91; background-image:url(icons/youtube.png);" target="_blank" href="https://youtube.com/bobvanluijt"></a>
+        <a class="footerLinkSmall" style="background-color:#534fa3; background-image:url(icons/github.png);" target="_blank" href="https://github.com/kubrickology"></a>
+        <a class="footerLinkSmall" style="background-color:#b72468; background-image:url(icons/facebook.png);" target="_blank" href="https://facebook.com/bvanluijt"></a>
+        <a class="footerLinkSmall" style="background-color:rgb(109, 200, 191); background-image:url(icons/wtf.png);" target="_blank" href="https://ello.co/bvl"></a>
     </div>
 </div>
 <script>
@@ -795,15 +817,17 @@ function clickRels(i){
 					}, 400, function(){
 						$('.blockContainer').remove();
 						$('.mountain').remove();
-						$('#footer').animate({
-							bottom: '',
-							top: '0px',
-							height: "58px"
-						}, 450, function(){
-							$('.footerLink').css('height', '35px');	
-							$('.footerLinkSmall').css('height', '58px');	
-							//$('body').css('overflow', 'auto');
-						});
+						if($( window ).width()>600){
+							$('#footer').animate({
+								bottom: '',
+								top: '0px',
+								height: "58px"
+							}, 450, function(){
+								$('.footerLink').css('height', '35px');	
+								$('.footerLinkSmall').css('height', '58px');	
+								//$('body').css('overflow', 'auto');
+							});
+						}
 					});
 					$("html, body").animate({
 						scrollTop: 0
@@ -2063,6 +2087,41 @@ function loadScript(url, callback){
     head.appendChild(script);
 }
 
+
+var sizerPage1;
+var sizerPage2;
+function setSizer(){
+	if($(window).width()>600){
+		if(!$('#page1').length){
+			 $('#page1').html(sizerPage1);
+			 $('#page2').html(sizerPage2);
+		}
+		$('#footer').css({
+			bottom: '',
+			top: '0px',
+			height: "58px"
+		});
+		
+		$('.footerLink').css('height', '35px');	
+		$('.footerLinkSmall').css('height', '58px');
+	} else {
+		//
+		// mobile optimised
+		//
+		if($('#page1').length){
+			sizerPage1 = $('#page1').html();
+			sizerPage2 = $('#page2').html();
+		}
+		$('#page1').remove();
+		$('#page2').remove();
+		$('#footer').css({
+			bottom: '',
+			top: '0px',
+			height: '11.5%'
+		});
+	}
+}
+
 //$(window).load(function() {
 	loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', function(){
 		$.ajaxSetup({
@@ -2088,9 +2147,13 @@ function loadScript(url, callback){
 							}
                         });
 						
-						
-						
 						doOnRelClick();
+						
+						$( window ).resize(function() {
+							setSizer();
+						});
+						setSizer();
+						
 						if(window.location.hash) {
 							$('#title').remove();
 							clickRels(window.location.hash.substr(2));
