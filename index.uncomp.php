@@ -2277,8 +2277,8 @@ loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', functi
 		});
 		$.getScript("//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js", function(){
 			$.getScript("js/TweenMax.min.js", function(){
-				$.getScript("js/cooltext.animations.js", function(){
-					$.getScript("js/cooltext.min.js", function(){
+				$.getScript("js/9328745328945732946752389745.js", function(){
+					$.getScript("js/7845753984759387.js", function(){
 						$('#page1').height(($(window).height()/2));
 						$('#page2').height($(window).height());
 						
