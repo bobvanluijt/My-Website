@@ -624,7 +624,7 @@ function tickle(){
 		var audio = new Audio();
 		//var canPlayOgg = !!audio.canPlayType && audio.canPlayType('audio/ogg; codecs="vorbis"') !== "";
 		var canPlayOgg = false;
-		var file = "whistle"
+		var file = "whistle";
 		var baseUrl = "./attributes/";
 			baseUrl += canPlayOgg ? file + ".ogg" : file + '.mp3';
 		
@@ -702,10 +702,10 @@ function setBlockCloud(toId, top, left, color, additionalClass, secondAdditional
 	littleBlock.css('z-index', i);
 	littleBlock.css('left', Math.round(left*blockSizeCloud)+'px');
 	littleBlock.css('top', Math.round(top*blockSizeCloud)+'px');
-	if(additionalClass!=''){
+	if(additionalClass!==''){
 		littleBlock.addClass(additionalClass);
 	}
-	if(secondAdditionalClass!=''){
+	if(secondAdditionalClass!==''){
 		littleBlock.addClass(secondAdditionalClass);
 	}
 	littleBlock.css('width', blockSizeCloud+'px');
@@ -723,10 +723,10 @@ function setBlock(top, left, color, additionalClass, secondAdditionalClass){
 	littleBlock.css('z-index', i);
 	littleBlock.css('left', Math.round(left*blockSize)+'px');
 	littleBlock.css('top', Math.round(top*blockSize)+'px');
-	if(additionalClass!=''){
+	if(additionalClass!==''){
 		littleBlock.addClass(additionalClass);
 	}
-	if(secondAdditionalClass!=''){
+	if(secondAdditionalClass!==''){
 		littleBlock.addClass(secondAdditionalClass);
 	}
 	littleBlock.css('width', blockSize+'px');
@@ -822,7 +822,7 @@ function cloudCreator(i){
 				duration: 1200,
 				step: function(now) {
 					$(cloud).css({
-						transform: 'rotate(' + now + 'deg)',
+						transform: 'rotate(' + now + 'deg)'
 					});
 					if($(cloud).css('opacity')>1){
 						$(cloud).css('opacity', '1');
@@ -847,7 +847,7 @@ function doOnRelClick(){
 		if($(this).attr('target')!='_blank'){
 			event.preventDefault();
 			
-			if($('body,html').scrollTop()==0){
+			if($('body,html').scrollTop()===0){
 				$("html, body").animate({ scrollTop: $(document).height() }, 1600);
 			}
 			
@@ -977,8 +977,8 @@ function clickRels(i){
 						}, 1200);
 					
 					$('.littleBlock').each(function(index, element) {
-						var newLeft = parseInt($(element).css('left'))-(4*parseInt($(element).attr('data-column')));
-						var newTop  = parseInt($(element).css('top'))-(4*parseInt($(element).attr('data-row')));
+						var newLeft = parseInt($(element).css('left'), 10)-(4*parseInt($(element).attr('data-column'), 10));
+						var newTop  = parseInt($(element).css('top'), 10)-(4*parseInt($(element).attr('data-row'), 10));
 						$(element).animate({
 							'width': '6px',
 							'height': '6px',
@@ -1731,13 +1731,13 @@ function buildBob(){
 		setBlock(row,  8, '#edc945', 'hair');
 		setBlock(row,  9,  '#edc945', 'hair');
 		setBlock(row,  10, '#edc945', 'hair');
-		row = 3
+		row = 3;
 		setBlock(row,  7,  '#edc945', 'hair');
 		setBlock(row,  8, '#edc945', 'hair');
 		setBlock(row,  9,  '#edc945', 'hair');
 		setBlock(row,  10, '#edc945', 'hair');
 		setBlock(row,  7,  '#edc945', 'hair');
-		row = 4
+		row = 4;
 		setBlock(row,  5, '#edc945', 'hair');
 		setBlock(row,  6,  '#edc945', 'hair');
 		setBlock(row,  7, '#edc945', 'hair');
