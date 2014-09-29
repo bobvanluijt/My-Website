@@ -72,7 +72,6 @@ if($detect->isMobile() && !$detect->isTablet()){
 <meta property="og:title" content="Bob van Luijt"/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="http://bobvanluijt.com/newAva/emailLogoKub.png"/>
-<meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="format-detection" content="telephone=no">
 <title>Bob van Luijt // Kubrickology</title>
