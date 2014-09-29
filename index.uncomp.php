@@ -6,10 +6,62 @@ if($detect->isMobile() && !$detect->isTablet()){
 	exit;
 }?><!DOCTYPE html>
 <html>
-<!-- ///////\\\\\\\\\-->
-<!-- WELCOME TO MY WEBSITE -->
-<!-- contact: twitter.com/bobvanluijt
-<!-- ///////\\\\\\\\\-->
+<!--                #                   
+                  #  :.                 
+                ,,     #                
+               #         @              
+ CREATED BY: @            `;            
+           '`               '`          
+         .;                   @         
+        @                       #       
+      @                          ,,     
+    :.              .              #    
+   +              .:;@               @  
+ @               @  '  #              `+
+@`             @    '   ,,             ;
+#@@          :,     '     #          .@@
+#@@@+       #       '       @       @@@@
+#@@@@@:   @         '        .;   #@@@@@
+#@@@@@@@:`          '          +:@@@@@@@
+#@@@@@@@@           '           @@@@@@@@
+#@@@@@@@@           '           @@@@@@@@
+#@@@@@@@@           '           @@@@@@@@
+#@@@@@@@@           '           @@@@@@@@
+#@@@@@@@@           ;           @@@@@@@@
+#@@@@@@@@          # @          @@@@@@@@
+#@@@@@@@@        @    ,:        @@@@@@@@
+#@@@@@@@@      :.       #       @@@@@@@@
+#@@@@@@@@     +           @     @@@@@@@@
+#@@@@@@@@   @              .;   @@@@@@@@
+#@@@@@@@@ '`                 +  @@@@@@@@
+#@@@@@@@#'                     @@@@@@@@@
+#@@@@@@@@;                     @@@@@@@@@
+#@@@@@@@@@@`                 +@@@@@@@@@@
+#@@@@@@@@@@@@              ,@@@@@@@@@@@.
+#@@@@@@@@@@@@@+           @@@@@@@@@@@;  
+#@@@@@@@@@@@@@@@,       #@@@@@@@@@@# UBRICKOLOGY
+#@@@@@@@@@@@@@@@@@    :@@@@@@@@@@@@@@   
+#@@@@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@' 
+#@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@@@@@@@@  .@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@@@@@@@@    '@@@@@@@@@@@@@. `@@@@@@@@@@
+#@@@@@@@@      @@@@@@@@@@'     '@@@@@@@@
+#@@@@@@@@       `@@@@@@@        @@@@@@@@
+#@@@@@@@@         ;@@@`         @@@@@@@@
+#@@@@@@@@           +           @@@@@@@@
+#@@@@@@@@           '           @@@@@@@@
+#@@@@@@@@           '           @@@@@@@@
+#@@@@@@@@           '           @@@@@@@@
+#@@@@@@@@           '           @@@@@@@@
+#@@@@@@@@           '           @@@@@@@@
+#@@@@@@@@           ;           @@@@@@@@
+#@@@@@@@#          @.,          @@@@@@@@
+#@@@@@@@#        :.   #         @@@@@@@@
+@@@@@@@@#       +       @       @@@@@@@@
+ `@@@@@@#     @          `;     @@@@@@@ 
+   ;@@@@#   '`             '    @@@@@`  
+     @@@# `'                 @  @@@;    
+       @#@                     '@#-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
@@ -54,15 +106,15 @@ body {
 	font-family: 'Cutive Mono';
 	cursor:pointer;
 	display:inline-block;
-	height:72%;
-	width:160px;
+	height: 122px;
+	width: 122px;
 	background-color:#009de0;
 	text-align:left;
 	padding:16px;
 	margin-right:12px;
 	margin-bottom:12px;
 	overflow:hidden;
-	font-size:18px;
+	font-size:12px;
 	font-weight:bold;
 	-webkit-box-shadow: 21px 21px 16px 6px rgba(0,0,0,0.38);
 	-moz-box-shadow: 21px 21px 16px 6px rgba(0,0,0,0.38);
@@ -526,18 +578,18 @@ body {
 </div>
 
 <div id="footer">
-    <a class="footerLink" style="background-color:#0076b3" data-rel="about" href="#!about">about</a>
-    <a class="footerLink" style="background-color:#6dc8bf" data-rel="music" href="#!music">music</a>
-    <a class="footerLink" style="background-color:#00a650" data-rel="technology" href="#!technology">technology</a>
-    <a class="footerLink" style="background-color:#fef200" data-rel="art" href="#!art">art</a>
-    <a class="footerLink" style="background-color:#534fa3" data-rel="talks" href="#!talks">talks</a>
-    <a class="footerLink" style="background-color:#f68b1f" data-rel="library" href="#!library">library</a>
+    <a class="footerLink" style="background-color:#FFE728" data-rel="about" href="#!about">about</a>
+    <a class="footerLink" style="background-color:#E3E100" data-rel="music" href="#!music">music</a>
+    <a class="footerLink" style="background-color:#FF9A3D" data-rel="technology" href="#!technology">technology</a>
+    <a class="footerLink" style="background-color:#FF525B" data-rel="art" href="#!art">art</a>
+    <a class="footerLink" style="background-color:#FF00A0" data-rel="talks" href="#!talks">talks</a>
+    <a class="footerLink" style="background-color:#D60DB5" data-rel="library" href="#!library">library</a>
     <div class="footerLink footerLinkMakeSmall">
-        <a class="footerLinkSmall" style="background-color:#f15a23; background-image:url(icons/twitter.png);" target="_blank" href="https://twitter.com/bobvanluijt"></a>
-        <a class="footerLinkSmall" style="background-color:#672d91; background-image:url(icons/youtube.png);" target="_blank" href="https://youtube.com/bobvanluijt"></a>
-        <a class="footerLinkSmall" style="background-color:#534fa3; background-image:url(icons/github.png);" target="_blank" href="https://github.com/kubrickology"></a>
-        <a class="footerLinkSmall" style="background-color:#b72468; background-image:url(icons/facebook.png);" target="_blank" href="https://facebook.com/bvanluijt"></a>
-        <a class="footerLinkSmall" style="background-color:rgb(109, 200, 191); background-image:url(icons/wtf.png);" target="_blank" href="https://ello.co/bvl"></a>
+        <a class="footerLinkSmall" style="background-color:#00B595; background-image:url(icons/twitter.png);" target="_blank" href="https://twitter.com/bobvanluijt"></a>
+        <a class="footerLinkSmall" style="background-color:#E3E100; background-image:url(icons/youtube.png);" target="_blank" href="https://youtube.com/bobvanluijt"></a>
+        <a class="footerLinkSmall" style="background-color:#FFC800; background-image:url(icons/github.png);" target="_blank" href="https://github.com/kubrickology"></a>
+        <a class="footerLinkSmall" style="background-color:#FF734F; background-image:url(icons/facebook.png);" target="_blank" href="https://facebook.com/bvanluijt"></a>
+        <a class="footerLinkSmall" style="background-color:#FF2E71; background-image:url(icons/wtf.png);" target="_blank" href="https://ello.co/bvl"></a>
     </div>
 </div>
 <script>
@@ -892,7 +944,7 @@ function clickRels(i){
 				
 				var countContainerBlock = 1;
 				$('.bigBlock').each(function(index, element) {
-					$('.containerLinks').append('<div class="containerLinksBlock" id="containerLinksBlock__'+countContainerBlock+'">'+$(element).find(".bigBlockTitleContent").text()+'</div>');
+					$('.containerLinks').append('<div class="containerLinksBlock" id="containerLinksBlock__'+countContainerBlock+'">'+$(element).find(".bigBlockTitleContent").html()+'</div>');
 					
 					$('#containerLinksBlock__'+countContainerBlock).click(function(){
 						window.location.assign("#!"+$(element).attr('data-url'));
@@ -2283,7 +2335,7 @@ loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', functi
 						$('#page2').height($(window).height());
 						
 						$('body').append('<div id="resizer"><div class="DivWhichNeedToBeVerticallyAligned">Please make your screen a bit bigger...</div></div>');
-						
+								
 						$("html, body").animate({ scrollTop: $('#page1').height() }, 100);
 						
 						$('.footerLink').each(function(index, element) {
