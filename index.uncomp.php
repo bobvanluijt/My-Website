@@ -83,6 +83,7 @@ body {
 	margin:0px;
 	overflow:hidden;
 	background-color:#009de0;
+	height:100%;
 }
 .container {
 	position:absolute;
@@ -119,6 +120,25 @@ body {
 	-moz-box-shadow: 21px 21px 16px 6px rgba(0,0,0,0.38);
 	box-shadow: 21px 21px 16px 6px rgba(0,0,0,0.38);
 	opacity:0;
+	-ms-transition: border-radius 0.6s, -ms-transform 1.6s;
+	-webkit-transition:border-radius 0.6s, -webkit-transform 1.6s;
+	-o-transition: border-radius 0.6s, -o-transform 1.6s;
+    transition:border-radius 0.6s, transform 1.6s;
+}
+.containerLinksBlock:hover {
+	border-radius:0px 42px 0px 42px;
+	-ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.page {
+	position:fixed;
+	left:0%;
+	right:0%;
+	top:0%;
+	bottom:0%;
 }
 
 #page1 {
@@ -127,7 +147,14 @@ body {
 	-webkit-box-shadow: 0px 17px 12px -1px rgba(0,0,0,0.47);
 	-moz-box-shadow: 0px 17px 12px -1px rgba(0,0,0,0.47);
 	box-shadow: 0px 17px 12px -1px rgba(0,0,0,0.47);
-	z-index:2;
+	bottom:100%;
+	z-index:3;
+}
+#page2 {
+	background-color:#009de0;
+	position: fixed;
+	overflow:hidden;
+	z-index:1;
 }
 
 .littleBlockCloud {
@@ -195,12 +222,7 @@ body {
 	display:none;
 }
 
-.page {
-	position:relative;
-	left:0px;
-	top:0px;
-	width:100%;
-}
+
 .bottomBlockContainer {
 	position:fixed;
 	left:0px;
@@ -230,9 +252,7 @@ body {
 .imFirst { /* padding for bottomBlocks */
 	margin-left:5px;
 }
-#page2 {
-	overflow:hidden;
-}
+
 
 #bobRoll {
 	position:absolute;
@@ -257,7 +277,7 @@ body {
 .footerLink {
 	position:relative;
 	float:left;
-	width:12.9%;
+	width:20%;
 	height:100%;
 	text-align:center;
 	font-size:12px;
@@ -270,7 +290,7 @@ body {
 }
 
 .footerLinkMakeSmall {
-	width:22.6%;
+	width:20%;
 	padding-top:0px !important;
 }
 
@@ -316,7 +336,7 @@ body {
 	top:0px;
 	width:90px;
 	height:65px;
-	z-index:1;
+	z-index:2;
 	cursor:crosshair;
 }
 
@@ -536,7 +556,7 @@ body {
 		font-size:8px;
 	}
 }
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 829px) {
 	.content {
 		width:100%;
 		left:0%;
@@ -547,12 +567,19 @@ body {
 		height:100%;
 	}
 	.DivWhichNeedToBeVerticallyAligned {
-		display: inline-block;
-		vertical-align: middle;
+		/* display: inline-block; */
+		/* vertical-align: middle; */
 		white-space: normal;
+		width: 500px;
+		top: 50%;
+		margin-top: -12.5%;
+		position: absolute;
+		left: 50%;
+		margin-left: -250px;
+		}
 	}
 }
-@media only screen and (max-height: 644px) {
+@media only screen and (max-height: 580px) {
 	#resizer {
 		display:block;
 		height:100%;
@@ -565,12 +592,11 @@ body {
 }
 </style>
 </head>
-
 <body>
 <div id="page1" class="page"></div>
 <div id="page2" class="page">
     <div id="title">
-        Hi there!<br>My name is Bob van Luijt. I run a design lab called Kubrickology. I work a lot with sound and music, technology or a combination of those things. On this website you can find a selection of my work.
+        Hi there!<br>My name is Bob van Luijt. I run a design lab called Kubrickology. I mostly work with sound and music, technology or a combination of those things. On this website you can find a selection of my work.
     </div>
     <div class="container"><!--LOAD ANIMATION--></div>
     <div class="mountain"><!--show me the mountain--></div>
@@ -578,11 +604,9 @@ body {
 
 <div id="footer">
     <a class="footerLink" style="background-color:#FFE728" data-rel="about" href="#!about">about</a>
-    <a class="footerLink" style="background-color:#E3E100" data-rel="music" href="#!music">music</a>
-    <a class="footerLink" style="background-color:#FF9A3D" data-rel="technology" href="#!technology">technology</a>
-    <a class="footerLink" style="background-color:#FF525B" data-rel="art" href="#!art">art</a>
-    <a class="footerLink" style="background-color:#FF00A0" data-rel="talks" href="#!talks">talks</a>
-    <a class="footerLink" style="background-color:#D60DB5" data-rel="library" href="#!library">library</a>
+    <a class="footerLink" style="background-color:#E3E100" data-rel="music" href="#!projects">projects</a>
+    <a class="footerLink" style="background-color:#FF9A3D" data-rel="talks" href="#!talks">talks</a>
+    <a class="footerLink" style="background-color:#FF525B" data-rel="library" href="#!library">library</a>
     <div class="footerLink footerLinkMakeSmall">
         <a class="footerLinkSmall" style="background-color:#00B595; background-image:url(icons/twitter.png);" target="_blank" href="https://twitter.com/bobvanluijt"></a>
         <a class="footerLinkSmall" style="background-color:#E3E100; background-image:url(icons/youtube.png);" target="_blank" href="https://youtube.com/bobvanluijt"></a>
@@ -847,10 +871,6 @@ function doOnRelClick(){
 		if($(this).attr('target')!='_blank'){
 			event.preventDefault();
 			
-			if($('body,html').scrollTop()===0){
-				$("html, body").animate({ scrollTop: $(document).height() }, 1600);
-			}
-			
 			var durationBottomRemove = 200;
 			if( $('.bottomBlock').length ){
 				$('.bottomBlock').each(function(index, element) {
@@ -897,6 +917,10 @@ function clickRels(i){
 
 	window.location.assign("#!"+i);
 	
+	$('#page1').animate({
+		bottom: '100%'
+	}, "fast");
+	
 	if(i.substr(0, 7)=='social:'){
 		if(i=='social:twitter'){
 			window.open(
@@ -933,6 +957,9 @@ function clickRels(i){
 				}
 				$('#hiddenField').html(data);
 				
+				
+				
+				
 				if(!$('.containerLinks').length){
 					$('#page2').append('<div class="containerLinks"></div>');	
 				}
@@ -946,9 +973,26 @@ function clickRels(i){
 					$('.containerLinks').append('<div class="containerLinksBlock" id="containerLinksBlock__'+countContainerBlock+'">'+$(element).find(".bigBlockTitleContent").html()+'</div>');
 					
 					$('#containerLinksBlock__'+countContainerBlock).click(function(){
+						
 						window.location.assign("#!"+$(element).attr('data-url'));
-						$("html, body").animate({ scrollTop: "0px" });
-						$('#page1').html( $(element).html() );
+						
+						if($('#page1').hasClass('meOpen')){
+							$('#page1').html( $(element).html() );
+						} else {
+							$('#page1').animate({
+								bottom: '0%'
+							}, { duration: "fast", queue: false, complete: function(){
+																				$('#page1').addClass('meOpen');
+																				$('#page1').html( $(element).html() );
+																		  }
+							});
+							
+							$('#page2').animate({
+								top: '50%'
+							}, { duration: 1900, queue: false });
+						}
+						
+						
 					});
 					
 					$('#containerLinksBlock__'+countContainerBlock).animate({
@@ -2330,12 +2374,10 @@ loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', functi
 			$.getScript("js/TweenMax.min.js", function(){
 				$.getScript("js/9328745328945732946752389745.js", function(){
 					$.getScript("js/7845753984759387.js", function(){
-						$('#page1').height(($(window).height()/2));
-						$('#page2').height($(window).height());
+						//$('#page1').height('0px');
+						//$('#page2').height($(window).height());
 						
-						$('body').append('<div id="resizer"><div class="DivWhichNeedToBeVerticallyAligned">Please make your screen a bit bigger...</div></div>');
-								
-						$("html, body").animate({ scrollTop: $('#page1').height() }, 100);
+						$('body').append('<div id="resizer"><div class="DivWhichNeedToBeVerticallyAligned">Resize your browser screen...</div></div>');
 						
 						$('.footerLink').each(function(index, element) {
 							$(element).delay(320*index).animate({
@@ -2353,7 +2395,9 @@ loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', functi
 						}
 						
 						$( window ).resize(function() {
-							location.reload();
+							$('#page1').height(($(window).height()/2));
+							$('#page2').height($(window).height());
+							
 						});
 						
 					});
